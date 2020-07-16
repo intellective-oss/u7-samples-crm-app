@@ -28,7 +28,7 @@ From the UI point of view, it should implement master-detail approach. Users sea
 ## Implementation steps
 This tutorial consists of several consecutive parts.
 Follow one after another if you are recreating the application from the scratch.
-Address [the GitHub repository](https://github.com/intellective-oss/u7-samples-crm-app), if you get stuck or want to compare your code with the final working result.
+Address [the GitHub repository](https://github.com/intellective-oss/u7-samples-crm-app) if you get stuck or want to compare your code with the final working result.
 
 * [Step 1](./step1-creating-project.md): Creating, running, and debugging the Unity application
 * [Step 2](./step2-solution-base.md): Configuring the data model and setting up the solution base
