@@ -1,0 +1,3 @@
+# Contains path format to files with UI side translations
+# Example valid file name : ui_de_CH.txt
+path.format=^ui_(\\w+_\\w+)\\.txt

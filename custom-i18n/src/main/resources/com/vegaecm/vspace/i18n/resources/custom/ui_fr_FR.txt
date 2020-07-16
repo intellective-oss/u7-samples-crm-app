@@ -1,0 +1,5 @@
+# fr_FR messages
+
+custom.HelloWorldTitle=fr_FR Bonjour le monde!
+custom.UserBrowserInfoTitle=fr_FR Informations sur le navigateur de l'utilisateur
+custom.button.SampleLabel=fr_FR Cliquez moi!

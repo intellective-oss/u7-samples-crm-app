@@ -1,0 +1,13 @@
+<!-- run-time/custom wro.xml -->
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+    <!-- Do not modify. It represents PROD mode customization group content. -->
+    <!-- Please modify the "src/main/wro-custom.xml" file instead.           -->
+    <group name="customization">
+        <js>/static/customization.js</js>
+        <css>/static/customization.css</css>
+    </group>
+
+</groups>

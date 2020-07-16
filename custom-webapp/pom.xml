@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.intellective.unity</groupId>
+        <artifactId>unity-customization-parent</artifactId>
+        <version>7.7.0-RC6</version>
+        <relativePath>../..</relativePath>
+    </parent>
+
+    <groupId>com.intellective.sample</groupId>
+    <artifactId>custom-webapp</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.intellective.sample</groupId>
+            <artifactId>custom-i18n</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intellective.sample</groupId>
+            <artifactId>custom-services</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <!-- Intellective's private Maven repository. You should have an access token to access it.  -->
+        <repository>
+            <id>intellective-maven</id>
+            <url>https://gitlab.devops.intellectivelab.com/api/v4/groups/39/-/packages/maven</url>
+        </repository>
+    </repositories>
+
+</project>

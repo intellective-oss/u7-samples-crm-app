@@ -1,0 +1,3 @@
+# Contains path format to files with server side translations
+path.format=^srv_(\\w+_\\w+)\\.txt
+

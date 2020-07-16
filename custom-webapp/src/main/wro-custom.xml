@@ -1,0 +1,18 @@
+<!-- run-time/custom wro.xml -->
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+    <!-- Customization group -->
+    <group name="customization">
+        <js>/js/custom/tab/LinkedSearchTemplatesTab.js</js>
+        <js>/js/custom/actions/LinkedSearchTemplatesTabActions.js</js>
+        <js>/js/custom/validation/UsPhone.js</js>
+        <js>/js/custom/actions/AddCustomerCorrespondence.js</js>
+        <js>/js/custom/actions/AddCustomerCorrespondenceDialog.js</js>
+
+        <css>/styling/overrides/sample-common.css</css>
+    </group>
+    <!-- END: Customization group -->
+
+</groups>

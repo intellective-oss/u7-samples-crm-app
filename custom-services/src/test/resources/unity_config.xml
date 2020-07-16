@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration>
+  <Solution>
+    <Name>Unity Customer Complaints Sample Solution</Name>
+    <Description>Unity Configuration for Customer Complaints ICM Solution</Description>
+    <DateCreated>03/22/2020 10:00:00</DateCreated>
+    <LastUpdateDate>06/09/2020 10:00:00</LastUpdateDate>
+  </Solution>
+  
+  <Selectors>
+    <Selector ID="UsStateSelector">
+      <ClassName>com.intellective.sample.selector.UsStateSelector</ClassName>
+      <Description/>
+    </Selector>
+    <Selector ID="UsCitySelector">
+      <ClassName>com.intellective.sample.selector.UsCitySelector</ClassName>
+      <Description/>
+      <Property ID="StateCodeProperty" value="StateCode"/>
+    </Selector>
+    
+    <Selector ID="Boolean">
+      <ClassName>com.vegaecm.vspace.selectors.XMLSelector</ClassName>
+      <Description/>
+      <Option name="True" value="True"/>
+      <Option name="False" value="False"/>
+      <Property ID="RefreshTimeoutSec" value="86400"/>
+    </Selector>
+  </Selectors>
+  
+  <ValueFormatSets>
+    <ValueFormatSet ID="default">
+      <ValueFormat pattern="MM/dd/yyyy hh:mm a" type="datetime"/>
+      <ValueFormat pattern="MM/dd/yyyy" type="date"/>
+    </ValueFormatSet>
+  </ValueFormatSets>
+  <SearchPropertySets>
+    <SearchPropertySet ID="advanced_search_properties">
+      <Property ID="DocumentTitle">
+        <MinLength>3</MinLength>
+      </Property>
+      <Property ID="Creator"/>
+      <Property ID="DateCreated"/>
+      <Property ID="DateLastModified"/>
+      <Property ID="ContentSize"/>
+      <Property ID="MimeType"/>
+    </SearchPropertySet>
+  </SearchPropertySets>
+  <OperatorTypes>
+    <OperatorsList>
+      <Operator ID="starts" name="starts with"/>
+      <Operator ID="not_starts" name="not starts with"/>
+      <Operator ID="contains" name="contains"/>
+      <Operator ID="not_contains" name="not contains"/>
+      <Operator ID="eq" name="is equal to"/>
+      <Operator ID="not" name="is not equal to"/>
+      <Operator ID="gt" name="is greater than"/>
+      <Operator ID="ge" name="is greater than or equal"/>
+      <Operator ID="lt" name="is less than"/>
+      <Operator ID="le" name="is less than or equal"/>
+      <Operator ID="range" name="is between"/>
+      <Operator ID="has" name="in set"/>
+    </OperatorsList>
+    <OperatorsSets>
+      <OperatorsSet ID="Unity">
+        <Operators datatype="string">
+          <Operator ID="starts"/>
+          <Operator ID="not_starts"/>
+          <Operator ID="contains"/>
+          <Operator ID="not_contains"/>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+        </Operators>
+        <Operators datatype="date">
+          <XType>datefield</XType>
+          <VType>date</VType>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+          <Operator ID="lt"/>
+          <Operator ID="gt"/>
+          <Operator ID="le"/>
+          <Operator ID="ge"/>
+          <Operator ID="range"/>
+        </Operators>
+        <Operators datatype="datetime">
+          <XType>vspace-datetimefield</XType>
+          <VType>date</VType>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+          <Operator ID="lt"/>
+          <Operator ID="gt"/>
+          <Operator ID="le"/>
+          <Operator ID="ge"/>
+          <Operator ID="range"/>
+        </Operators>
+        <Operators datatype="int">
+          <XType>numberfield</XType>
+          <VType>num</VType>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+          <Operator ID="lt"/>
+          <Operator ID="gt"/>
+          <Operator ID="le"/>
+          <Operator ID="ge"/>
+        </Operators>
+        <Operators datatype="float">
+          <XType>numberfield</XType>
+          <VType>num</VType>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+          <Operator ID="lt"/>
+          <Operator ID="gt"/>
+          <Operator ID="le"/>
+          <Operator ID="ge"/>
+        </Operators>
+        <Operators datatype="boolean">
+          <XType>vspace-boolean-field</XType>
+          <VType>boolean</VType>
+          <Operator ID="eq"/>
+          <Operator ID="not"/>
+        </Operators>
+      </OperatorsSet>
+    </OperatorsSets>
+  </OperatorTypes>
+  <TreeModels/>
+  <UpdateTemplates/>
+  <Plugins/>
+  <UIProperties>
+    <Property ID="application.default.language" value="en_US"/>
+    <Property ID="tab.folder-view.tree.width" value="350"/>
+    <Property ID="application.banner.image" value="${theme}/images/banner.gif"/>
+    <Property ID="application.title" value="Unity"/>
+    <Property ID="application.logon.title" value="Unity 7 Sample application"/>
+    <Property ID="application.logon.expired.msg" value="Your session has expired. Please login again."/>
+    <Property ID="application.user_settings.language_selection.languages" value="en_US,de_CH,fr_FR"/>
+    <Property ID="application.welcome.color" value="black"/>
+    <Property ID="application.logo.url" value="http://www.intellective.com/"/>
+    <Property ID="application.banner.reserved.right" value="150px"/>
+    <Property ID="application.skin.css" value="extjs/css/blue.css"/>
+    <Property ID="application.logon.image" value="${theme}/images/Unity_Logo_small.png"/>
+    <Property ID="application.logo.image" value="${theme}/images/Unity_Logo_medium.png"/>
+    <Property ID="application.theme" value="gray"/>
+    <Property ID="application.default.theme" value="neptune"/>
+    <Property ID="application.logo.url.title" value="Unity"/>
+  </UIProperties>
+  <SystemProperties>
+    <Property ID="devMode" value="${devModeEnabled}"/> <!--Activate DEVELOPMENT mode (non-obfuscated code) -->
+
+    <Property ID="ucmCaseProviderProfile" value="icm"/>
+    <Property ID="fileupload.file.extensions" value="*"/>
+    <Property ID="fileupload.numberoffiles.threshold" value="10000000"/>
+    <Property ID="zviewer.update.path" value="viewerNotInstalled.jsp"/>
+    <Property ID="advanced.search.propertymode.encode" value="zip"/>
+    <Property ID="fileupload.directory.path" value="f:\\Downloads"/>
+    <Property ID="fileupload.size.threshold" value="10000000"/>
+    <Property ID="role.mode" value="RoleUnion"/>
+    <Property ID="fileupload.dnd.enabled" value="true"/>
+    <Property ID="advanced.search.editmode.encode" value="zip"/>
+    <Property ID="ajax.timeout" value="120"/>
+  </SystemProperties>
+  <SSO>
+    <SSOEnabled>false</SSOEnabled>
+    <InvokeJAASValidation>false</InvokeJAASValidation>
+  </SSO>
+  <EnterpriseSearch>
+    <Crawlers/>
+    <Searchers/>
+  </EnterpriseSearch>
+  <AccessRoles groupCaseInsensitive="true" roleCaseInsensitive="true">
+    <AccessRole description="Built-in system role for Unity Configuration editors" isDefault="false" name="canEditApplicationConfig" system="true">
+      <Allow name="#AUTHENTICATED-USERS" type="group"/>
+    </AccessRole>
+    <AccessRole description="" isDefault="false" name="canSave" system="true">
+      <Allow name="#AUTHENTICATED-USERS" type="group"/>
+    </AccessRole>
+    <AccessRole description="Built-in system role for Unity System Administrators" isDefault="false" name="Unity System Administrators" system="true">
+      <Allow name="#AUTHENTICATED-USERS" type="group"/>
+    </AccessRole>
+    <AccessRole description="Built-in system role for Unity Configuration Administrators" isDefault="false" name="Unity Configuration Administrators" system="true">
+      <Allow name="#AUTHENTICATED-USERS" type="group"/>
+    </AccessRole>
+    <AccessRole description="Built-in system role for Unity Users. All users granted access to the application should be members of this group" isDefault="false" name="Unity Users" system="true">
+      <Allow name="#AUTHENTICATED-USERS" type="group"/>
+    </AccessRole>
+  </AccessRoles>
+  <Actions>
+    <Action ID="gridcolumnclick" multiselect="false" scope="any" type="column-click">
+      <Name/>
+      <IconCls/>
+      <Tooltip/>
+      <Uri/>
+      <CustomParameters>
+        <Actions/>
+      </CustomParameters>
+      <Security>
+        <AllowRole>Unity Users</AllowRole>
+      </Security>
+    </Action>
+    <Action ID="rowcontextmenu" multiselect="false" scope="any" type="context-menu">
+      <Name/>
+      <IconCls/>
+      <Tooltip/>
+      <Uri/>
+      <CustomParameters>
+        <Actions/>
+      </CustomParameters>
+      <Security>
+        <AllowRole>Unity Users</AllowRole>
+      </Security>
+    </Action>
+    <Action ID="FolderView_NodeContextMenu" multiselect="false" scope="any" type="">
+      <Name/>
+      <IconCls/>
+      <Tooltip/>
+      <Uri/>
+      <CustomParameters>
+        <Actions/>
+      </CustomParameters>
+    </Action>
+  </Actions>
+  <Datasources/>
+  <Properties>
+    <Property ID="caseId">
+      <Name>Case Identifier</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="ContentSize">
+      <Name>File Size</Name>
+      <Type>int</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-filesize-column</XType>
+      <Width>70</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="Creator">
+      <Name>Created By</Name>
+      <Type>datetime</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="DateCreated">
+      <Name>Created At</Name>
+      <Type>datetime</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="DateLastModified">
+      <Name>Modified By</Name>
+      <Type>datetime</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+      <Header>Modified At</Header>
+    </Property>
+    <Property ID="DateLastModifiedVersions">
+      <Name>Modified At</Name>
+      <Type>datetime</Type>
+      <Resizable>false</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="DocumentTitle">
+      <Name>Document Title</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>300</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="FoldersFiledIn">
+      <Name>Folders</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="Id">
+      <Name>Id</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="IsCurrentVersion">
+      <Name>Current Version?</Name>
+      <Type>boolean</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="IsFrozenVersion">
+      <Name>Frozen Version?</Name>
+      <Type>boolean</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="IsReserved">
+      <Name/>
+      <Type>boolean</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-doc-reserved-column</XType>
+      <Width>28</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="IsReserved$CurrentVersion">
+      <Name/>
+      <Type>boolean</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-doc-reserved-column</XType>
+      <Width>28</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="IsVersioningEnabled">
+      <Name>Is Versioning Enabled</Name>
+      <Type>boolean</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="LastModifier">
+      <Name>Modified By</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>200</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="LastModifierVersions">
+      <Name>Modified By</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="MajorVersionNumber">
+      <Name>Major Version</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="MimeType">
+      <Name>Mime Type</Name>
+      <Type>string</Type>
+      <Resizable>false</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-mime-column</XType>
+      <Width>28</Width>
+      <Tooltip/>
+      <Header/>
+    </Property>
+    <Property ID="MimeTypeVersions">
+      <Name>Mime Type</Name>
+      <Type>string</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-mime-column</XType>
+      <Width>28</Width>
+      <Tooltip/>
+      <Header/>
+    </Property>
+    <Property ID="MinorVersionNumber">
+      <Name>Minor Version</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Width>115</Width>
+      <Tooltip/>
+    </Property>
+    <Property ID="VersionSeriesId">
+      <Name>ID</Name>
+      <Type>string</Type>
+      <Resizable>true</Resizable>
+      <Sortable>true</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+    <Property ID="VersionStatus">
+      <Name>Version Status</Name>
+      <Type>string</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType>vspace-version-status-column</XType>
+      <Tooltip/>
+    </Property>
+    <Property ID="VersionStatus$CurrentVersion">
+      <Name>Version Status(Current version)</Name>
+      <Type>string</Type>
+      <Resizable>false</Resizable>
+      <Sortable>false</Sortable>
+      <MultiValue>false</MultiValue>
+      <XType/>
+      <Tooltip/>
+    </Property>
+  </Properties>
+  <Grids/>
+  <Tabs>
+    <!-- U7-2723 -->
+    <Tab ID="HelloWorldTab">
+          <Title>Custom Hello World Tab</Title>
+          <Tooltip/>
+          <XType>hello-world-tab</XType>
+          <CustomParameters/>
+    </Tab>
+    <!-- END: U7-2723 -->
+
+    <Tab ID="configuration-console">
+      <Title>Configuration Console</Title>
+      <Tooltip/>
+      <XType>configuration-console-tab</XType>
+      <CustomParameters/>
+      <Sections>
+        <Section ID="solution-configuration">
+          <Security>
+            <AllowRole>Unity Configuration Administrators</AllowRole>
+          </Security>
+        </Section>
+        <Section ID="system-configuration">
+          <Security>
+            <AllowRole>Unity System Administrators</AllowRole>
+          </Security>
+        </Section>
+      </Sections>
+    </Tab>
+  </Tabs>
+  <SearchTemplates/>
+  <ColumnSets/>
+  <RepositoryDataProviders/>
+  <CustomConfiguration/>
+  <Facets/>
+  <Perspectives/>
+  <UiComponents>
+    <Charts/>
+    <Indicators/>
+  </UiComponents>
+  <UserAudit>
+    <AuditEnabled>true</AuditEnabled>
+    <FilePath>/tmp/userlogin.csv</FilePath>
+    <MaxFileSize>1024KB</MaxFileSize>
+    <LogPattern>sessionId;ip;username;date</LogPattern>
+  </UserAudit>
+  <GridTypes>
+    <GridType ID="folder-documents">
+      <Title>Folder documents</Title>
+      <Url>tree/getFolderDocs</Url>
+    </GridType>
+    <GridType ID="advanced-search">
+      <Title>Advanced search</Title>
+      <Url>search/advanced</Url>
+    </GridType>
+    <GridType ID="search-templates">
+      <Title>Search templates</Title>
+      <Url>search/templates</Url>
+    </GridType>
+  </GridTypes>
+  <ViewerConfiguration>
+    <supportedMimeTypes>
+      <unsupported-default-disposition>attachment</unsupported-default-disposition>
+      <mime-type disposition="">application/doc</mime-type>
+      <mime-type disposition="">application/docx</mime-type>
+      <mime-type disposition="">application/msexcel</mime-type>
+      <mime-type disposition="">application/msoutlook</mime-type>
+      <mime-type disposition="">application/msword</mime-type>
+      <mime-type disposition="">application/pdf</mime-type>
+      <mime-type disposition="">application/rtf</mime-type>
+      <mime-type disposition="">application/vnd.ibm.modcap</mime-type>
+      <mime-type disposition="">application/vnd.ms-excel</mime-type>
+      <mime-type disposition="">application/vnd.ms-outlook</mime-type>
+      <mime-type disposition="">application/vnd.ms-powerpoint</mime-type>
+      <mime-type disposition="">application/x-ms-excel</mime-type>
+      <mime-type disposition="">application/x-msexcel</mime-type>
+      <mime-type disposition="">application/x-rtf</mime-type>
+      <mime-type disposition="">image/bmp</mime-type>
+      <mime-type disposition="">image/gif</mime-type>
+      <mime-type disposition="">image/jpeg</mime-type>
+      <mime-type disposition="">image/jpg</mime-type>
+      <mime-type disposition="">image/png</mime-type>
+      <mime-type disposition="">image/tiff</mime-type>
+      <mime-type disposition="">text/html</mime-type>
+      <mime-type disposition="">text/plain</mime-type>
+      <mime-type disposition="">text/richtext</mime-type>
+      <mime-type disposition="">text/rtf</mime-type>
+      <unsupported-mime-type disposition="attachment">message/rfc822</unsupported-mime-type>
+    </supportedMimeTypes>
+    <Redactions/>
+    <imageBounds maxHeight="10000" maxWidth="6000" minHeight="0" minWidth="0"/>
+    <optimalImageBounds fitTo="Width" maxHeight="2000" maxWidth="2000" minHeight="0" minWidth="0"/>
+    <Annotations/>
+    <MainToolbar/>
+    <ContinuousMode/>
+  </ViewerConfiguration>
+  <Solutions configFolder="."/>
+  <SolutionsConfiguration>
+    <ce-config>
+      <server-uri>CE</server-uri>
+      <object-store>OS</object-store>
+      <elevated-privileges-user>
+        <security-principal/>
+        <security-encryption-key/>
+        <security-credentials/>
+      </elevated-privileges-user>
+      <queries/>
+      <attachment-object name="Bp8CommentAttachment">
+        <fields/>
+      </attachment-object>
+      <audit-object name="Bp8UserComment">
+        <fields/>
+      </audit-object>
+      <comments-and-history>
+        <columns/>
+        <sort-info direction="DESC" field="DateCreated"/>
+        <filters width="150"/>
+        <dialog height="280" width="450">
+          <fields/>
+        </dialog>
+      </comments-and-history>
+      <viewer height="500" width="550"/>
+      <dialog-case-popup height="500" width="550"/>
+      <security-tab view="SIMPLE"/>
+    </ce-config>
+    <pe-config>
+      <connection-point>Conn_1</connection-point>
+      <roster-name>Demo</roster-name>
+    </pe-config>
+    <integration-config>
+      <case-model>ICM</case-model>
+    </integration-config>
+    <icm-config>
+      <case-manager-rest-uri>/CaseManagerProxy</case-manager-rest-uri>
+      <solution-name>Demo</solution-name>
+    </icm-config>
+    <case-fields-audit-config enabled="true"/>
+    <content-search>
+      <object-classes/>
+      <queries/>
+      <filters/>
+      <sort-info direction="DESC" field="rank"/>
+    </content-search>
+    <advanced-search>
+      <object-classes/>
+      <queries/>
+      <filters/>
+      <choice-lists/>
+    </advanced-search>
+    <inbasket-widget/>
+    <search-widget/>
+    <content-view-widget/>
+    <document-properties-view-widget/>
+  </SolutionsConfiguration>
+  <VersionsAPI>
+    <jar label="Unity Version:" name="vu-core.jar"/>
+    <jar label="Unity Intelligence Engine Version:" name="uie-document.jar"/>
+    <jar label="Unity P8 Content Web API Version:" name="jace.jar"/>
+  </VersionsAPI>
+</Configuration>

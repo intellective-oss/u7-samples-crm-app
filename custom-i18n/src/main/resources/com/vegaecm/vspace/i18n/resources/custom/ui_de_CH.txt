@@ -1,0 +1,6 @@
+# de_CH messages
+
+custom.HelloWorldTitle=de_CH Hallo Welt!
+custom.UserBrowserInfoTitle=de_CH Benutzer-Browser-Informationen
+custom.button.SampleLabel=de_CH Klick mich!
+

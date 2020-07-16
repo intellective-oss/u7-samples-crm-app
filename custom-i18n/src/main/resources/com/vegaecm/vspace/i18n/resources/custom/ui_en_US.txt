@@ -1,0 +1,5 @@
+﻿# en_US messages
+
+custom.HelloWorldTitle=en_US Hello World!
+custom.UserBrowserInfoTitle=en_US User browser info
+custom.button.SampleLabel=en_US Click me!

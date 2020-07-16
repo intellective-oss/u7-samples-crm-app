@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Configuration>
+    <Solution>
+        <Name>Unity CRM Sample</Name>
+        <Description>Unity CRM Sample Configuration</Description>
+        <DateCreated>07/16/2020 10:00:00</DateCreated>
+        <LastUpdateDate>07/16/2020 10:00:00</LastUpdateDate>
+    </Solution>
+    <ValueFormatSets>
+        <ValueFormatSet ID="default">
+            <ValueFormat pattern="MM/dd/yyyy hh:mm a" type="datetime"/>
+            <ValueFormat pattern="MM/dd/yyyy" type="date"/>
+        </ValueFormatSet>
+    </ValueFormatSets>
+    <SearchPropertySets>
+    </SearchPropertySets>
+    <OperatorTypes>
+        <OperatorsList>
+            <Operator ID="starts" name="starts with"/>
+            <Operator ID="not_starts" name="not starts with"/>
+            <Operator ID="contains" name="contains"/>
+            <Operator ID="not_contains" name="not contains"/>
+            <Operator ID="eq" name="is equal to"/>
+            <Operator ID="not" name="is not equal to"/>
+            <Operator ID="gt" name="is greater than"/>
+            <Operator ID="ge" name="is greater than or equal"/>
+            <Operator ID="lt" name="is less than"/>
+            <Operator ID="le" name="is less than or equal"/>
+            <Operator ID="range" name="is between"/>
+            <Operator ID="has" name="in set"/>
+        </OperatorsList>
+        <OperatorsSets>
+            <OperatorsSet ID="Unity">
+                <Operators datatype="string">
+                    <Operator ID="starts"/>
+                    <Operator ID="not_starts"/>
+                    <Operator ID="contains"/>
+                    <Operator ID="not_contains"/>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                </Operators>
+                <Operators datatype="date">
+                    <XType>datefield</XType>
+                    <VType>date</VType>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                    <Operator ID="lt"/>
+                    <Operator ID="gt"/>
+                    <Operator ID="le"/>
+                    <Operator ID="ge"/>
+                    <Operator ID="range"/>
+                </Operators>
+                <Operators datatype="datetime">
+                    <XType>vspace-datetimefield</XType>
+                    <VType>date</VType>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                    <Operator ID="lt"/>
+                    <Operator ID="gt"/>
+                    <Operator ID="le"/>
+                    <Operator ID="ge"/>
+                    <Operator ID="range"/>
+                </Operators>
+                <Operators datatype="int">
+                    <XType>numberfield</XType>
+                    <VType>num</VType>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                    <Operator ID="lt"/>
+                    <Operator ID="gt"/>
+                    <Operator ID="le"/>
+                    <Operator ID="ge"/>
+                </Operators>
+                <Operators datatype="float">
+                    <XType>numberfield</XType>
+                    <VType>num</VType>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                    <Operator ID="lt"/>
+                    <Operator ID="gt"/>
+                    <Operator ID="le"/>
+                    <Operator ID="ge"/>
+                </Operators>
+                <Operators datatype="boolean">
+                    <XType>vspace-boolean-field</XType>
+                    <VType>boolean</VType>
+                    <Operator ID="eq"/>
+                    <Operator ID="not"/>
+                </Operators>
+            </OperatorsSet>
+        </OperatorsSets>
+    </OperatorTypes>
+    <TreeModels/>
+    <UpdateTemplates>
+        <UpdateTemplate ID="properties_template_add_customer_info">
+            <UpdateItems>
+                <UpdateItem>
+                    <FieldName>DocumentTitle</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                </UpdateItem>
+                <UpdateItem>
+                    <FieldName>State</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                    <SelectorId>UsStateSelector</SelectorId>
+                </UpdateItem>
+                <UpdateItem>
+                    <FieldName>City</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                    <Linked>State</Linked>
+                    <SelectorId>UsCitySelector</SelectorId>
+                </UpdateItem>
+                <UpdateItem>
+                    <FieldName>PhoneNumber</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                </UpdateItem>
+            </UpdateItems>
+        </UpdateTemplate>
+        <UpdateTemplate ID="properties_template_add_Correspondence">
+            <UpdateItems>
+                <UpdateItem>
+                    <FieldName>CustomerName</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                </UpdateItem>
+                <UpdateItem>
+                    <FieldName>DocumentTitle</FieldName>
+                    <Type>string</Type>
+                    <ReadOnly>false</ReadOnly>
+                    <Required>true</Required>
+                </UpdateItem>
+            </UpdateItems>
+        </UpdateTemplate>
+    </UpdateTemplates>
+    <Plugins/>
+    <UIProperties>
+        <Property ID="application.default.language" value="en_US"/>
+        <Property ID="tab.folder-view.tree.width" value="350"/>
+        <Property ID="application.banner.image" value="${theme}/images/banner.gif"/>
+        <Property ID="application.title" value="Unity"/>
+        <Property ID="application.logon.title" value="${application.logon.title}"/>
+        <Property ID="application.logon.expired.msg" value="Your session has expired. Please login again."/>
+        <Property ID="application.user_settings.language_selection.languages" value="en_US,de_CH,fr_FR"/>
+        <Property ID="application.welcome.color" value="black"/>
+        <Property ID="application.logo.url" value="http://www.intellective.com/"/>
+        <Property ID="application.banner.reserved.right" value="150px"/>
+        <Property ID="application.skin.css" value="extjs/css/blue.css"/>
+        <Property ID="application.logon.image" value="${theme}/images/Unity_Logo_small.png"/>
+        <Property ID="application.logo.image" value="${theme}/images/Unity_Logo_medium.png"/>
+        <Property ID="application.theme" value="gray"/>
+        <Property ID="application.default.theme" value="neptune"/>
+        <Property ID="application.logo.url.title" value="Unity"/>
+    </UIProperties>
+    <SystemProperties>
+        <!-- Activates DEVELOPMENT mode (non-obfuscated code) -->
+        <Property ID="devMode" value="${devModeEnabled}"/>
+
+        <Property ID="ucmCaseProviderProfile" value="icm"/>
+        <Property ID="fileupload.file.extensions" value="*"/>
+        <Property ID="fileupload.numberoffiles.threshold" value="10000000"/>
+        <Property ID="zviewer.update.path" value="viewerNotInstalled.jsp"/>
+        <Property ID="advanced.search.propertymode.encode" value="zip"/>
+        <Property ID="fileupload.directory.path" value="f:\\Downloads"/>
+        <Property ID="fileupload.size.threshold" value="10000000"/>
+        <Property ID="role.mode" value="RoleUnion"/>
+        <Property ID="fileupload.dnd.enabled" value="true"/>
+        <Property ID="advanced.search.editmode.encode" value="zip"/>
+        <Property ID="ajax.timeout" value="120"/>
+    </SystemProperties>
+    <SSO>
+        <SSOEnabled>false</SSOEnabled>
+        <InvokeJAASValidation>false</InvokeJAASValidation>
+    </SSO>
+    <EnterpriseSearch>
+        <Crawlers/>
+        <Searchers/>
+    </EnterpriseSearch>
+    <AccessRoles groupCaseInsensitive="true" roleCaseInsensitive="true">
+        <AccessRole description="Built-in system role for Unity Configuration editors" isDefault="false"
+                    name="canEditApplicationConfig" system="true">
+            <Allow name="#AUTHENTICATED-USERS" type="group"/>
+        </AccessRole>
+        <AccessRole description="" isDefault="false" name="canSave" system="true">
+            <Allow name="#AUTHENTICATED-USERS" type="group"/>
+        </AccessRole>
+        <AccessRole description="Built-in system role for Unity System Administrators" isDefault="false"
+                    name="Unity System Administrators" system="true">
+            <Allow name="#AUTHENTICATED-USERS" type="group"/>
+        </AccessRole>
+        <AccessRole description="Built-in system role for Unity Configuration Administrators" isDefault="false"
+                    name="Unity Configuration Administrators" system="true">
+            <Allow name="#AUTHENTICATED-USERS" type="group"/>
+        </AccessRole>
+        <AccessRole
+                description="Built-in system role for Unity Users. All users granted access to the application should be members of this group"
+                isDefault="false" name="Unity Users" system="true">
+            <Allow name="#AUTHENTICATED-USERS" type="group"/>
+        </AccessRole>
+    </AccessRoles>
+    <Actions>
+        <Action ID="gridcolumnclick" multiselect="false" scope="any" type="column-click">
+            <Name/>
+            <IconCls/>
+            <Tooltip/>
+            <Uri/>
+            <CustomParameters>
+                <Actions/>
+            </CustomParameters>
+            <Security>
+                <AllowRole>Unity Users</AllowRole>
+            </Security>
+        </Action>
+        <Action ID="rowcontextmenu" multiselect="false" scope="any" type="context-menu">
+            <Name/>
+            <IconCls/>
+            <Tooltip/>
+            <Uri/>
+            <CustomParameters>
+                <Actions/>
+            </CustomParameters>
+            <Security>
+                <AllowRole>Unity Users</AllowRole>
+            </Security>
+        </Action>
+        <Action ID="FolderView_NodeContextMenu" multiselect="false" scope="any" type="">
+            <Name/>
+            <IconCls/>
+            <Tooltip/>
+            <Uri/>
+            <CustomParameters>
+                <Actions/>
+            </CustomParameters>
+        </Action>
+        <Action ID="add_CustomerInfo" multiselect="true" scope="single" type="toolbar">
+            <Name>Add Customer Info</Name>
+            <IconCls>action-add-document</IconCls>
+            <Tooltip>Add Customer Info</Tooltip>
+            <Uri/>
+            <Parameters>
+                <DocumentClass>
+                    <RepositoryDataProvider ID="Customer_repository">
+                        <Disabled>false</Disabled>
+                        <DefaultValue>{value: "CustomerInfo", name: "CustomerInfo"}</DefaultValue>
+                        <SelectorId>CustomerInfoClass</SelectorId>
+                        <Roles/>
+                    </RepositoryDataProvider>
+                </DocumentClass>
+            </Parameters>
+            <CustomParameters>
+                <ActionHandlerId>add_document</ActionHandlerId>
+                <RepositoryDataProvider ID="Customer_repository">
+                    <FolderPicker>
+                        <Visible>false</Visible>
+                        <TreeModel name="CEFoldersWithRoot">
+                            <Properties>
+                                <Property ID="FolderPath" value="/Customers"/>
+                                <Property ID="DataProviderId" value="Customer_repository"/>
+                                <Property ID="LazyLoading" value="true"/>
+                            </Properties>
+                        </TreeModel>
+                    </FolderPicker>
+                    <UpdateTemplateId>properties_template_add_customer_info</UpdateTemplateId>
+                    <Fields>
+                        <DocumentTitle>DocumentTitle</DocumentTitle>
+                    </Fields>
+                </RepositoryDataProvider>
+            </CustomParameters>
+        </Action>
+        <Action ID="add_CustomerCorrespondence" multiselect="true" scope="single" type="toolbar">
+            <Name>Add Customer Correspondence</Name>
+            <IconCls>action-add-document</IconCls>
+            <Tooltip>Add Customer Correspondence</Tooltip>
+            <Uri/>
+            <Parameters>
+                <DocumentClass>
+                    <RepositoryDataProvider ID="Customer_repository">
+                        <Disabled>false</Disabled>
+                        <DefaultValue>{value: "Correspondence", name: "Correspondence"}</DefaultValue>
+                        <SelectorId>CorrespondenceClass</SelectorId>
+                        <Roles/>
+                    </RepositoryDataProvider>
+                </DocumentClass>
+            </Parameters>
+            <CustomParameters>
+                <RepositoryDataProvider ID="Customer_repository">
+                    <XType>widget.custom-action-AddCustomerCorrespondence-dialog</XType>
+                    <FolderPicker>
+                        <Visible>false</Visible>
+                        <TreeModel name="CEFoldersWithRoot">
+                            <Properties>
+                                <Property ID="FolderPath" value="/Customers"/>
+                                <Property ID="DataProviderId" value="Customer_repository"/>
+                                <Property ID="LazyLoading" value="true"/>
+                            </Properties>
+                        </TreeModel>
+                    </FolderPicker>
+                    <UpdateTemplateId>properties_template_add_Correspondence</UpdateTemplateId>
+                    <Fields>
+                        <DocumentTitle>DocumentTitle</DocumentTitle>
+                    </Fields>
+                </RepositoryDataProvider>
+            </CustomParameters>
+        </Action>
+    </Actions>
+    <Datasources>
+        <Datasource ID="CustomerDS" class="com.vegaecm.vspace.datasources.CEDatasource">
+            <URI>${ce.uri}</URI>
+            <ObjectStore>${documents.object_store}</ObjectStore>
+        </Datasource>
+    </Datasources>
+    <Selectors>
+        <Selector ID="UsStateSelector">
+            <ClassName>com.intellective.sample.selector.UsStateSelector</ClassName>
+            <Description/>
+        </Selector>
+        <Selector ID="UsCitySelector">
+            <ClassName>com.intellective.sample.selector.UsCitySelector</ClassName>
+            <Description/>
+            <Property ID="StateCodeProperty" value="State"/>
+        </Selector>
+        <Selector ID="CustomerInfoClass">
+            <ClassName>com.vegaecm.vspace.selectors.XMLSelector</ClassName>
+            <Description/>
+            <Option name="CustomerInfo" value="CustomerInfo"/>
+            <Property ID="RefreshTimeoutSec" value="86400"/>
+        </Selector>
+        <Selector ID="CorrespondenceClass">
+            <ClassName>com.vegaecm.vspace.selectors.XMLSelector</ClassName>
+            <Description/>
+            <Option name="Correspondence" value="Correspondence"/>
+            <Property ID="RefreshTimeoutSec" value="86400"/>
+        </Selector>
+        <Selector ID="Boolean">
+            <ClassName>com.vegaecm.vspace.selectors.XMLSelector</ClassName>
+            <Description/>
+            <Option name="True" value="True"/>
+            <Option name="False" value="False"/>
+            <Property ID="RefreshTimeoutSec" value="86400"/>
+        </Selector>
+    </Selectors>
+    <Properties>
+        <Property ID="DocumentTitle">
+            <Name>Document Title</Name>
+            <Type>string</Type>
+            <Resizable>true</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>300</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="Id">
+            <Name>Id</Name>
+            <Type>string</Type>
+            <Resizable>true</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>115</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="ContentSize">
+            <Name>File Size</Name>
+            <Type>int</Type>
+            <Resizable>true</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType>vspace-filesize-column</XType>
+            <Width>70</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="MimeType">
+            <Name>Mime Type</Name>
+            <Type>string</Type>
+            <Resizable>false</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType>vspace-mime-column</XType>
+            <Width>28</Width>
+            <Tooltip/>
+            <Header/>
+        </Property>
+        <Property ID="State">
+            <Name>US State</Name>
+            <Type>string</Type>
+            <Resizable>false</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>128</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="City">
+            <Name>US State City</Name>
+            <Type>string</Type>
+            <Resizable>false</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>128</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="PhoneNumber">
+            <Name>Phone number</Name>
+            <Type>string</Type>
+            <Resizable>false</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>128</Width>
+            <Tooltip/>
+        </Property>
+        <Property ID="CustomerName">
+            <Name>Customer name</Name>
+            <Type>string</Type>
+            <Resizable>false</Resizable>
+            <Sortable>true</Sortable>
+            <MultiValue>false</MultiValue>
+            <XType/>
+            <Width>128</Width>
+            <Tooltip/>
+        </Property>
+    </Properties>
+    <Grids>
+        <Grid ID="Customer_Grid" enableColumnReorder="false" groupSearchResults="false">
+            <Toolbar>
+                <Actions>
+                    <Action ID="add_CustomerInfo"/>
+                </Actions>
+            </Toolbar>
+            <Listeners>
+                <Listener ID="ClickColumn">
+                    <Action>custom_view_client_details</Action>
+                </Listener>
+            </Listeners>
+            <XType>vspace-docs</XType>
+            <Columns checkBoxModel="true" formatSet="default">
+                <ColumnSet ID="Customer_Grid_ColSet_All" type="all"/>
+                <ColumnSet ID="Customer_Grid_ColSet_Default" type="default"/>
+            </Columns>
+        </Grid>
+        <Grid ID="CustomerCorrespondence_Grid" enableColumnReorder="false" groupSearchResults="false">
+            <Toolbar>
+                <Actions>
+                    <Action ID="add_CustomerCorrespondence"/>
+                </Actions>
+            </Toolbar>
+            <Listeners/>
+            <XType>vspace-docs</XType>
+            <Columns checkBoxModel="true" formatSet="default">
+                <ColumnSet ID="CustomerCorrespondence_Grid_ColSet_All" type="all"/>
+                <ColumnSet ID="CustomerCorrespondence_Grid_ColSet_Default" type="default"/>
+            </Columns>
+        </Grid>
+    </Grids>
+    <Tabs>
+        <Tab ID="CustomerDataTab">
+            <Title>Customer Info and Correspondence</Title>
+            <XType>custom-linked-search-templates-tab</XType>
+            <Grid ID="Customer_Grid"/>
+            <CustomParameters>
+                <DataProviderId>Customer_repository</DataProviderId>
+                <masterProperty>DocumentTitle</masterProperty>
+            </CustomParameters>
+        </Tab>
+        <Tab ID="configuration-console">
+            <Title>Configuration Console</Title>
+            <Tooltip/>
+            <XType>configuration-console-tab</XType>
+            <CustomParameters/>
+            <Sections>
+                <Section ID="solution-configuration">
+                    <Security>
+                        <AllowRole>Unity Configuration Administrators</AllowRole>
+                    </Security>
+                </Section>
+                <Section ID="system-configuration">
+                    <Security>
+                        <AllowRole>Unity System Administrators</AllowRole>
+                    </Security>
+                </Section>
+            </Sections>
+        </Tab>
+    </Tabs>
+    <SearchTemplates>
+        <TemplateSet ID="CustomerDataTab-master-templates-set">
+            <Template>Customer_Search</Template>
+        </TemplateSet>
+        <TemplateSet ID="CustomerDataTab-details-templates-set">
+            <Template>Customer_Correspondence_Search</Template>
+        </TemplateSet>
+        <SearchTemplate ID="Customer_Search">
+            <DataProviderId>Customer_repository</DataProviderId>
+            <Description>Search "Customer Info" using State, City, and Phone Number fields</Description>
+            <Comment>Enter search criteria</Comment>
+            <Autoexecute>true</Autoexecute>
+            <Hidden>false</Hidden>
+            <Operation dataProviderId="Customer_repository" type="search">
+                <OperationProperties>
+                    <Property ID="query" type="FIRST">
+                        <SecuredValue>
+                            <Value>SELECT {Macro.ResultProperties} FROM CustomerInfo WHERE This INFOLDER '/Customers'
+                                AND {Macro.QueryCriterion}
+                            </Value>
+                        </SecuredValue>
+                    </Property>
+                    <Property ID="objectStore" type="FIRST">
+                        <SecuredValue>
+                            <Value>${documents.object_store}</Value>
+                        </SecuredValue>
+                    </Property>
+                </OperationProperties>
+            </Operation>
+            <SortFields/>
+            <Criteria>
+                <Criterion>
+                    <FieldName>State</FieldName>
+                    <Comment>at least 2 characters are required</Comment>
+                    <Type>string</Type>
+                    <Operator>eq</Operator>
+                    <Required>false</Required>
+                    <Hidden>false</Hidden>
+                    <Readonly>false</Readonly>
+                    <MultiValue>false</MultiValue>
+                    <MinLength>2</MinLength>
+                    <MaxLength>64</MaxLength>
+                    <SelectorId>UsStateSelector</SelectorId>
+                </Criterion>
+                <Criterion>
+                    <FieldName>City</FieldName>
+                    <Comment>at least 2 characters are required</Comment>
+                    <Type>string</Type>
+                    <Operator>eq</Operator>
+                    <Required>false</Required>
+                    <Hidden>false</Hidden>
+                    <Readonly>false</Readonly>
+                    <MultiValue>false</MultiValue>
+                    <MinLength>2</MinLength>
+                    <MaxLength>64</MaxLength>
+                    <Linked>State</Linked>
+                    <SelectorId>UsCitySelector</SelectorId>
+                </Criterion>
+                <Criterion>
+                    <FieldName>PhoneNumber</FieldName>
+                    <Comment>+1 XXX-YYY-YYYY</Comment>
+                    <Type>string</Type>
+                    <Operator>eq</Operator>
+                    <Required>false</Required>
+                    <Hidden>false</Hidden>
+                    <Readonly>false</Readonly>
+                    <MultiValue>false</MultiValue>
+                    <VType>UsPhone</VType>
+                </Criterion>
+            </Criteria>
+            <Grid ID="Customer_Grid"/>
+        </SearchTemplate>
+        <SearchTemplate ID="Customer_Correspondence_Search">
+            <DataProviderId>Customer_repository</DataProviderId>
+            <Description>Search all the "Correspondence" documents for selected customer</Description>
+            <Comment>Enter search criteria</Comment>
+            <Autoexecute>false</Autoexecute>
+            <Hidden>false</Hidden>
+            <Operation dataProviderId="Customer_repository" type="search">
+                <OperationProperties>
+                    <Property ID="query" type="FIRST">
+                        <SecuredValue>
+                            <Value>SELECT {Macro.ResultProperties} FROM Correspondence WHERE This INFOLDER '/Customers'
+                                AND {Macro.QueryCriterion}
+                            </Value>
+                        </SecuredValue>
+                    </Property>
+                    <Property ID="objectStore" type="FIRST">
+                        <SecuredValue>
+                            <Value>${documents.object_store}</Value>
+                        </SecuredValue>
+                    </Property>
+                </OperationProperties>
+            </Operation>
+            <SortFields/>
+            <Criteria>
+                <Criterion>
+                    <FieldName>CustomerName</FieldName>
+                    <Type>string</Type>
+                    <Operator>eq</Operator>
+                    <Required>false</Required>
+                    <Hidden>false</Hidden> <!-- hidden -->
+                    <Readonly>false</Readonly>
+                    <MultiValue>false</MultiValue>
+
+                    <!-- U7-2723: Use dynamic value coming from master results grid. -->
+                    <DefaultValue>{Level.masterProperty}</DefaultValue>
+                </Criterion>
+            </Criteria>
+            <Grid ID="CustomerCorrespondence_Grid"/>
+        </SearchTemplate>
+    </SearchTemplates>
+    <ColumnSets>
+        <ColumnSet ID="Customer_Grid_ColSet_All">
+            <Properties>
+                <Property>State</Property>
+                <Property>City</Property>
+                <Property>PhoneNumber</Property>
+                <Property>DocumentTitle</Property>
+                <Property>ContentSize</Property>
+            </Properties>
+        </ColumnSet>
+        <ColumnSet ID="Customer_Grid_ColSet_Default">
+            <Properties>
+                <Property>State</Property>
+                <Property>City</Property>
+                <Property>PhoneNumber</Property>
+                <Property>DocumentTitle</Property>
+            </Properties>
+        </ColumnSet>
+        <ColumnSet ID="CustomerCorrespondence_Grid_ColSet_All">
+            <Properties>
+                <Property>MimeType</Property>
+                <Property>DocumentTitle</Property>
+                <Property>ContentSize</Property>
+            </Properties>
+        </ColumnSet>
+        <ColumnSet ID="CustomerCorrespondence_Grid_ColSet_Default">
+            <Properties>
+                <Property>MimeType</Property>
+                <Property>DocumentTitle</Property>
+                <Property>ContentSize</Property>
+            </Properties>
+        </ColumnSet>
+    </ColumnSets>
+    <RepositoryDataProviders>
+        <RepositoryDataProvider ID="Customer_repository"
+                                class="com.vegaecm.vspace.providers.ce.CERepositoryDataProvider">
+            <OperatorsSet>P8</OperatorsSet>
+            <Operations>
+                <Operation ID="add_content" type="add">
+                    <OperationProperties>
+                        <Property ID="DocumentClass" type="FIRST">
+                            <SecuredValue>
+                                <Value>Document</Value>
+                            </SecuredValue>
+                        </Property>
+                    </OperationProperties>
+                    <DefineProperties>
+                        <Property ID="DocumentTitle" type="FIRST">
+                            <SecuredValue>
+                                <Value>Title</Value>
+                            </SecuredValue>
+                        </Property>
+                    </DefineProperties>
+                </Operation>
+            </Operations>
+            <DefineProperties/>
+            <ViewerParameters/>
+            <ResultLimit>2000</ResultLimit>
+            <QuerySizeLimit>10000</QuerySizeLimit>
+            <PagingMode>nonpaged</PagingMode>
+            <DefineSecurityParentage>true</DefineSecurityParentage>
+
+            <Datasource>CustomerDS</Datasource>
+
+            <PropertyNameMapper>
+                <Mapping external="document_id" internal="Id"/>
+            </PropertyNameMapper>
+        </RepositoryDataProvider>
+    </RepositoryDataProviders>
+    <CustomConfiguration/>
+    <Facets/>
+    <Perspectives/>
+    <UiComponents>
+        <Charts/>
+        <Indicators/>
+    </UiComponents>
+    <UserAudit>
+        <AuditEnabled>false</AuditEnabled>
+        <FilePath>/tmp/userlogin.csv</FilePath>
+        <MaxFileSize>1024KB</MaxFileSize>
+        <LogPattern>sessionId;ip;username;date</LogPattern>
+    </UserAudit>
+    <GridTypes>
+        <GridType ID="folder-documents">
+            <Title>Folder documents</Title>
+            <Url>tree/getFolderDocs</Url>
+        </GridType>
+        <GridType ID="advanced-search">
+            <Title>Advanced search</Title>
+            <Url>search/advanced</Url>
+        </GridType>
+        <GridType ID="search-templates">
+            <Title>Search templates</Title>
+            <Url>search/templates</Url>
+        </GridType>
+    </GridTypes>
+    <ViewerConfiguration>
+        <supportedMimeTypes>
+            <unsupported-default-disposition>attachment</unsupported-default-disposition>
+            <mime-type disposition="">application/doc</mime-type>
+            <mime-type disposition="">application/docx</mime-type>
+            <mime-type disposition="">application/msexcel</mime-type>
+            <mime-type disposition="">application/msoutlook</mime-type>
+            <mime-type disposition="">application/msword</mime-type>
+            <mime-type disposition="">application/pdf</mime-type>
+            <mime-type disposition="">application/rtf</mime-type>
+            <mime-type disposition="">application/vnd.ibm.modcap</mime-type>
+            <mime-type disposition="">application/vnd.ms-excel</mime-type>
+            <mime-type disposition="">application/vnd.ms-outlook</mime-type>
+            <mime-type disposition="">application/vnd.ms-powerpoint</mime-type>
+            <mime-type disposition="">application/x-ms-excel</mime-type>
+            <mime-type disposition="">application/x-msexcel</mime-type>
+            <mime-type disposition="">application/x-rtf</mime-type>
+            <mime-type disposition="">image/bmp</mime-type>
+            <mime-type disposition="">image/gif</mime-type>
+            <mime-type disposition="">image/jpeg</mime-type>
+            <mime-type disposition="">image/jpg</mime-type>
+            <mime-type disposition="">image/png</mime-type>
+            <mime-type disposition="">image/tiff</mime-type>
+            <mime-type disposition="">text/html</mime-type>
+            <mime-type disposition="">text/plain</mime-type>
+            <mime-type disposition="">text/richtext</mime-type>
+            <mime-type disposition="">text/rtf</mime-type>
+            <unsupported-mime-type disposition="attachment">message/rfc822</unsupported-mime-type>
+        </supportedMimeTypes>
+        <Redactions/>
+        <imageBounds maxHeight="10000" maxWidth="6000" minHeight="0" minWidth="0"/>
+        <optimalImageBounds fitTo="Width" maxHeight="2000" maxWidth="2000" minHeight="0" minWidth="0"/>
+        <Annotations/>
+        <MainToolbar/>
+        <ContinuousMode/>
+    </ViewerConfiguration>
+    <Solutions configFolder="${solution.folder}"/>
+    <SolutionsConfiguration>
+        <ce-config>
+            <server-uri>CE</server-uri>
+            <object-store>OS</object-store>
+            <elevated-privileges-user>
+                <security-principal/>
+                <security-encryption-key/>
+                <security-credentials/>
+            </elevated-privileges-user>
+            <queries/>
+            <attachment-object name="Bp8CommentAttachment">
+                <fields/>
+            </attachment-object>
+            <audit-object name="Bp8UserComment">
+                <fields/>
+            </audit-object>
+            <comments-and-history>
+                <columns/>
+                <sort-info direction="DESC" field="DateCreated"/>
+                <filters width="150"/>
+                <dialog height="280" width="450">
+                    <fields/>
+                </dialog>
+            </comments-and-history>
+            <viewer height="500" width="550"/>
+            <dialog-case-popup height="500" width="550"/>
+            <security-tab view="SIMPLE"/>
+        </ce-config>
+        <pe-config>
+            <connection-point>Conn_1</connection-point>
+            <roster-name>Demo</roster-name>
+        </pe-config>
+        <integration-config>
+            <case-model>ICM</case-model>
+        </integration-config>
+        <icm-config>
+            <case-manager-rest-uri>/CaseManagerProxy</case-manager-rest-uri>
+            <solution-name>Demo</solution-name>
+        </icm-config>
+        <case-fields-audit-config enabled="true"/>
+        <content-search>
+            <object-classes/>
+            <queries/>
+            <filters/>
+            <sort-info direction="DESC" field="rank"/>
+        </content-search>
+        <advanced-search>
+            <object-classes/>
+            <queries/>
+            <filters/>
+            <choice-lists/>
+        </advanced-search>
+        <inbasket-widget/>
+        <search-widget/>
+        <content-view-widget/>
+        <document-properties-view-widget/>
+    </SolutionsConfiguration>
+    <VersionsAPI>
+        <jar label="Unity Version:" name="vu-core.jar"/>
+        <jar label="Unity Intelligence Engine Version:" name="uie-document.jar"/>
+        <jar label="Unity P8 Content Web API Version:" name="jace.jar"/>
+    </VersionsAPI>
+</Configuration>

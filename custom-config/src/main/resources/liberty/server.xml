@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Unity Server">
+
+    <featureManager>
+        <feature>webProfile-8.0</feature>
+    </featureManager>
+
+    <httpEndpoint id="defaultHttpEndpoint" httpPort="9080" httpsPort="9443" />
+
+	<!-- authentication and authorization settings -->
+
+    <basicRegistry id="basic" realm="BasicRealm">
+        <user name="intadmin" password="{xor}Lz4sLChvLTs=" />
+        <user name="intuser1" password="{xor}Lz4sLChvLTs=" />
+        <user name="intuser2" password="{xor}Lz4sLChvLTs=" />
+    </basicRegistry>
+
+    <jaasLoginContextEntry name="VES" id="VES" />
+    <jaasLoginContextEntry name="vzv" id="vzv" />
+
+	<!-- jdbc resources -->
+    <library id="OJDBC">
+        <fileset dir="${shared.resource.dir}/jdbc" includes="ojdbc8.jar"/>
+    </library>
+    <library id="DB2JDBC">
+        <fileset dir="${shared.resource.dir}/jdbc" includes="db2jcc.jar db2jcc-license-cu.jar"/>
+    </library>
+    <library id="MSSQLJDBC">
+        <fileset dir="${shared.resource.dir}/jdbc" includes="mssql-jdbc.jar"/>
+    </library>
+    <library id="PGJDBC">
+        <fileset dir="${shared.resource.dir}/jdbc" includes="postgresql.jar"/>
+    </library>
+
+	<!-- applications -->
+	<applicationManager autoExpand="true"/>
+    <application id="custom_app_exploded" location="/opt/ol/wlp/usr/servers/defaultServer/apps/custom-webapp.war" name="custom-webapp" type="war"/>
+
+</server>
