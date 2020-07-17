@@ -1,9 +1,9 @@
 &larr; [Previous step: Implementing the master-detail search template tab](./step3-implementing-master-detail.md)
 
 On this step we are going to create a data service that will implement a set of necessary operations to work with
-data sets os US states, cities, and area codes:
-* https://github.com/jasonong/List-of-US-States/blob/master/states.csv
-* https://github.com/ravisorg/Area-Code-Geolocation-Database/blob/master/us-area-code-cities.csv
+free data sets:
+* [US States with codes](https://github.com/jasonong/List-of-US-States/blob/master/states.csv)
+* [US Cities with area codes](https://github.com/ravisorg/Area-Code-Geolocation-Database/blob/master/us-area-code-cities.csv)
 
 Project template provides a `custom-services` module that allows to add any server-side code using Spring 4 including
 general beans and MVC capabilities. 
@@ -13,7 +13,7 @@ At first, we should introduce model objects and appropriate interface declaring 
 
 [`com.intelective.sample.model.State`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/State.java)
 
-```
+```java
 package com.intellective.sample.model;
 
 import java.util.HashMap;
