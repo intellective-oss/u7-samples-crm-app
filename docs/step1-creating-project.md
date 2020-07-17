@@ -34,8 +34,8 @@ Replace the `<JDK_HOME>` placeholder by the path leading to OpenJDK 8 compliant 
 OpenLiberty directory.  
 
 Edit the `server.xml` file of the OpenLiberty instance. Insert, at least the following:
-```
-  ...
+```xml
+  <!-- ... -->
   <basicRegistry id="basic" realm="BasicRealm">
     <user name="intadmin" password="{xor}Lz4sLChvLTs=" />
     <user name="intuser1" password="{xor}Lz4sLChvLTs=" />
@@ -45,7 +45,7 @@ Edit the `server.xml` file of the OpenLiberty instance. Insert, at least the fol
   <jaasLoginContextEntry name="vzv" id="vzv" />
 
   <application id="custom_app_war" location="<PROJECT_DIR>\custom-webapp\target\custom-webapp-1.0.0-SNAPSHOT.war" name="custom-webapp" type="war"/>
-  ...
+  <!-- ... -->
 ```
 Run the application server using the script above. To test if the application is up and running, open http://localhost:9080/custom-webapp.
 

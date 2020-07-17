@@ -34,16 +34,16 @@ URL: http://localhost:9080/vu/reset.jsp. You have to be authorized in the applic
 ## Configuring connector
 At first, add data source and data provider in the appropriate sections
 (`/Configuration/Datasources` and `/Configuration/RepositoryDataProviders`):
-```
+```xml
     <Datasource ID="CustomerDS" class="com.vegaecm.vspace.datasources.CEDatasource">
         <URI>${ce.uri}</URI>
         <ObjectStore>${documents.object_store}</ObjectStore>
     </Datasource>
 ```
-Note, that it relies on the environment variables externalized into the separate file at
-`custom-config/src/main/resources/unity/unity_config-environment.ini`.
+Note, that it relies on the environment variables externalized into the separate file
+[`custom-config/src/main/resources/unity/unity_config-environment.ini`](../custom-config/src/main/resources/unity/unity_config-environment.ini).
 
-```
+```xml
     <RepositoryDataProvider ID="Customer_repository"
                             class="com.vegaecm.vspace.providers.ce.CERepositoryDataProvider">
         <OperatorsSet>P8</OperatorsSet>
@@ -80,7 +80,7 @@ Note, that it relies on the environment variables externalized into the separate
     </RepositoryDataProvider>
 ```
 In order to provide the data to the client, we have to define properties at `/Configuration/Properties`:
-```
+```xml
     <Property ID="DocumentTitle">
         <Name>Document Title</Name>
         <Type>string</Type>
@@ -167,7 +167,7 @@ In order to provide the data to the client, we have to define properties at `/Co
 ## Master search template (Customers)
 
 Now we can configure the search template for `Customer` documents (add it into `/Configuration/SearchTemplates` node):
-```
+```xml
     <SearchTemplate ID="Customer_Search">
         <DataProviderId>Customer_repository</DataProviderId>
         <Description>Search "Customer Info" using State, City, and Phone Number fields</Description>
@@ -234,7 +234,7 @@ It defines the [FileNet Search SQL](https://www.ibm.com/support/knowledgecenter/
 template and criteria for 3 fields: `State`, `City`, and `PhoneNumber`. 
 
 Now we can define a grid for representing search result (add it into `/Configuaration/Grids` node):
-```
+```xml
     <Grid ID="Customer_Grid" enableColumnReorder="false" groupSearchResults="false">
         <Toolbar>
             <Actions/>
@@ -252,7 +252,7 @@ Now we can define a grid for representing search result (add it into `/Configuar
 It relies on 2 column sets - full list of columns and the default one showed to user. User can
 change a set of visible columns by choosing from the full list. Add the following sections into
 `/Configuration/ColumnSets` node of the configuration XML:
-```
+```xml
     <ColumnSet ID="Customer_Grid_ColSet_All">
         <Properties>
             <Property>State</Property>
@@ -274,7 +274,7 @@ change a set of visible columns by choosing from the full list. Add the followin
 
 For now, we can use the out-of-the-box search template tab to display this search template
 (`/Configuration/Tabs`):
-```
+```xml
     <Tab ID="CustomerDataTab-master">
         <Title>Customers (Master)</Title>
         <XType>search-templates-tab</XType>
@@ -282,8 +282,9 @@ For now, we can use the out-of-the-box search template tab to display this searc
     </Tab>
 ```
 
-To assign the search template to the tab, we need a search template set called `<TAB_ID>-templates-set`:
-```
+To assign the search template to the tab, we need a search template set called `<TAB_ID>-templates-set` 
+(at `/Configuration/SearchTemplates`):
+```xml
     <TemplateSet ID="CustomerDataTab-master-templates-set">
         <Template>Customer_Search</Template>
     </TemplateSet>
@@ -296,7 +297,7 @@ Now we can apply the configuration (restart the server or use `reset.jsp`) and t
 Aside of the idea that a result set for `Correspondence` documents should be filtered
 using the selected `Customer` document name, we can define a search template for this in
 the same fashion as we did above (at `/Configuration/SearchTemplates`):
-```
+```xml
     <SearchTemplate ID="Customer_Correspondence_Search">
         <DataProviderId>Customer_repository</DataProviderId>
         <Description>Search all the "Correspondence" documents for selected customer</Description>
@@ -335,7 +336,7 @@ the same fashion as we did above (at `/Configuration/SearchTemplates`):
 Here we have the criteria that relies on `CustomerName` field. However, now it's just a plain string field.
 
 A grid for the second search template (`/Configuration/Grids`):
-```
+```xml
     <Grid ID="CustomerCorrespondence_Grid" enableColumnReorder="false" groupSearchResults="false">
         <Toolbar>
             <Actions/>
@@ -349,7 +350,7 @@ A grid for the second search template (`/Configuration/Grids`):
     </Grid>
 ```
 Corresponding column sets (`/Configuration/ColumnSets`):
-```
+```xml
     <ColumnSet ID="CustomerCorrespondence_Grid_ColSet_All">
         <Properties>
             <Property>MimeType</Property>
@@ -367,7 +368,7 @@ Corresponding column sets (`/Configuration/ColumnSets`):
 ```
 
 Finally, add the search template into existing template set:
-```
+```xml
     <TemplateSet ID="CustomerDataTab-master-templates-set">
         <Template>Customer_Search</Template>
         <Template>Customer_Correspondence_Search</Template>
@@ -379,4 +380,4 @@ And now we can see the second search template availible in the application:
 On this step, we have configured the application using only out-of-the-box capabilities.
 We will use this solution base in our future customizations.
 
-&rarr; [Next step: Implementing the master-detail search template tab](./step3-implementing-master-detail)
+&rarr; [Next step: Implementing the master-detail search template tab](./step3-implementing-master-detail.md)
