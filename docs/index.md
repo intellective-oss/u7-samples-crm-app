@@ -33,7 +33,7 @@ Address [the GitHub repository](https://github.com/intellective-oss/u7-samples-c
 * [Step 1](./step1-creating-project.md): Creating, running, and debugging the Unity application
 * [Step 2](./step2-solution-base.md): Configuring the data model and setting up the solution base
 * [Step 3](./step3-implementing-master-detail.md): Implementing the master-detail search template tab
-* [Step 4](./step4-creating-data-service.md): Creating the custom data service and the REST API
+* [Step 4](./step4-creating-data-service.md): Creating custom data service and REST API
 * [Step 5](./step5-selectors-and-validation.md): Implementing custom selectors and criteria field validation
 * [Step 6](./step6-altering-search-result.md): Altering search results on the server-side
 * [Step 7](./step7-custom-actions.md): Implementing actions for creating Customers and Correspondence documents
