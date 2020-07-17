@@ -11,7 +11,6 @@ general beans and MVC capabilities.
 # Implementing data service
 At first, we should introduce model objects and appropriate interface declaring all the operations we need.
 
-[`com.intelective.sample.model.State`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/State.java)
 ```java
 package com.intellective.sample.model;
 
