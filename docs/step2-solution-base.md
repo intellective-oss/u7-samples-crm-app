@@ -1,5 +1,8 @@
 &larr; [Previous step: Creating, running, and debugging the Unity application](./step1-creating-project.md)
 
+On this step we are going to prepare application data model (and test data itself), as well as create a base
+solution configuration using existing out-of-the-box capabilities.
+
 # Preparing data
 Here we are going to use [IBM FileNet Content Manager](https://www.ibm.com/products/filenet-content-manager)
 to handle our data model and store documents representing `Customers` and `Correspondence`.

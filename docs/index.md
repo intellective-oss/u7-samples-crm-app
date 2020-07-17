@@ -5,7 +5,7 @@ This tutorial implements a very basic application that uses only simple document
 [Unity 7](https://www.intellective.com/unity) and
 [IBM FileNet Content Manager](https://www.ibm.com/products/filenet-content-manager).
 
-This sample is far enough from reflecting real business scenario. However, it covers many interesting 
+This sample is far enough from reflecting any real business scenario. However, it covers many interesting 
 configuration and customization topics that are required for creating any end-user application.
 
 ## The requirements

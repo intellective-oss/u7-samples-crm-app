@@ -3,6 +3,7 @@
 On this step we are going to implement master-detail behaviour. We will put search template components
 one below another and wire up the details criteria for `Correspondence` with the selected `Customer` document.
 
+# Implementing master-details tab 
 At first, create a file [`custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js`](../custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js):
 ```javascript
 /**
@@ -151,6 +152,7 @@ New component expects to have 2 different template sets. So, we need to rearrang
 Rebuild the application using `mvn clean package -P web-dev-mode` command and see the result:
 ![Screenshot - Master-details](./images/screenshot-step3-masterdetails1.png)
 
+# Implementing action handler
 Now, the only thing left on this step is implementing an action for selecting `Customer` document and filtering
 `Correspondence` by this.
 Add a new JS file at [`custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js`](../custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js):
