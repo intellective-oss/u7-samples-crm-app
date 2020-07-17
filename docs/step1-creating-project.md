@@ -77,3 +77,4 @@ You can debug JS code, even change it on the fly using the `Overrides` function:
 Here you change the code, test it immediately without rebuilding the app (which is definitely a time-consuming operation).
 After you complete debugging, just copy the final version of the JS code into the main project sources. 
   
+&rarr; [Next step: Configuring the data model and setting up the solution base](./step2-solution-base.md)
