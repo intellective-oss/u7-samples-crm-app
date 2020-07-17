@@ -58,7 +58,7 @@ public class State {
 
 [`com.intelective.sample.model.City`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/City.java)
 
-```
+```java
 package com.intellective.sample.model;
 
 import java.util.LinkedList;
@@ -94,7 +94,7 @@ public class City {
 
 [`com.intelective.sample.service.StatesCitiesDictionaryService`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/StatesCitiesDictionaryService.java)
 
-```
+```java
 package com.intellective.sample.service;
 
 import com.intellective.sample.model.State;
@@ -124,7 +124,7 @@ The next possible step, before service implementation, is creating tests:
 
 [`com.intellective.sample.service.StatesCitiesDictionaryServiceTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/service/StatesCitiesDictionaryServiceTest.java)
 
-```
+```java
 package com.intellective.sample.service;
 
 import com.intellective.sample.model.State;
@@ -221,7 +221,7 @@ Everything is ready to implement a service.
 
 [`com.intellective.sample.service.DefaultStatesCitiesDictionaryServiceImpl`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/DefaultStatesCitiesDictionaryServiceImpl.java):
 
-```
+```java
 package com.intellective.sample.service;
 
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -310,7 +310,7 @@ We are going to publish our data as REST-like service. However, it will only rea
 
 [`com.intellective.sample.controller.StatesController`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/controller/StatesController.java)
 
-```
+```java
 package com.intellective.sample.controller;
 
 import com.intellective.sample.model.City;
@@ -372,7 +372,7 @@ public class StatesController {
 
 In the validation operation we use the `com.intellective.sample.model.OperationResult` wrapper:
 
-```
+```java
 package com.intellective.sample.model;
 
 import java.util.Collections;
@@ -423,7 +423,7 @@ Don't forget about a test.
 
 [`com.intellective.sample.controller.StatesControllerTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/controller/StatesControllerTest.java)
 
-```
+```java
 package com.intellective.sample.controller;
 
 import com.intellective.sample.model.City;
