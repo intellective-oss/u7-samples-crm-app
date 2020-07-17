@@ -4,7 +4,7 @@ On this step we are going to implement master-detail behaviour. We will put sear
 one below another and wire up the details criteria for `Correspondence` with the selected `Customer` document.
 
 # Implementing master-details tab 
-At first, create a file [`custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js`](../custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js):
+At first, create a file [`custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/tab/LinkedSearchTemplatesTab.js):
 ```javascript
 /**
  * Override Unity component to display master and detail search templates, one is just below another.
@@ -108,7 +108,7 @@ to place a 'linked' search template (details) below the master one. Second compo
 It gathers search templates and provide the `masterProperty` parameter for the 'linkedTemplate' that will pass the
 selected `Customer's` name.
 
-To include a new JS source file into the build, edit the [`wro-custom.xml`](../custom-webapp/src/main/wro-custom.xml) file:
+To include a new JS source file into the build, edit the [`wro-custom.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/wro-custom.xml) file:
 ```xml
 <groups xmlns="http://www.isdc.ro/wro"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -123,7 +123,7 @@ To include a new JS source file into the build, edit the [`wro-custom.xml`](../c
 
 </groups>
 ```
-Introduce a new tab in the [solution config](../custom-config/src/main/resources/unity/unity_config.xml).
+Introduce a new tab in the [solution config](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config.xml).
 In fact, you may replace the tab we've created on the previous step (ID=`CustomerDataTab-master`) with the following
 one:
 ```xml
@@ -155,7 +155,7 @@ Rebuild the application using `mvn clean package -P web-dev-mode` command and se
 # Implementing action handler
 Now, the only thing left on this step is implementing an action for selecting `Customer` document and filtering
 `Correspondence` by this.
-Add a new JS file at [`custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js`](../custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js):
+Add a new JS file at [`custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/actions/LinkedSearchTemplatesTabActions.js):
 ```javascript
 /**
  * Defines the action handler for master record (customer) selection event
@@ -187,7 +187,7 @@ Here we define the action handler to be called when a record is being selected i
 We figure out what property needs to be passed, get it from the selected item at master grid and pass to the details.
 Finally, we call `detailsSearchPanel.executeQuery()` to perform search with updated criteria.
 
-As we already have done before, we should add a new JS source into the [`wro-custom.xml`](../custom-webapp/src/main/wro-custom.xml) file:
+As we already have done before, we should add a new JS source into the [`wro-custom.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/wro-custom.xml) file:
 ```xml
 <groups xmlns="http://www.isdc.ro/wro"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

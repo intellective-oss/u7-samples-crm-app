@@ -17,7 +17,7 @@
 	<import resource="classpath:configuration/auth-cfg.xml"/>
 	<import resource="classpath:configuration/vu-core.xml"/>
 
-        <!-- U7-2755 : add custom services to top spring context -->
+	<!-- add custom services to the top spring context -->
 	<import resource="classpath:configuration/custom-services.xml"/>
 
 </beans>
