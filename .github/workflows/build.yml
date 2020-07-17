@@ -1,4 +1,4 @@
-name: Build and Test
+name: build and test
 
 on:
   push:
@@ -26,6 +26,12 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
+      - name: Configure Maven settings
+        env:
+          M2_SETTINGS: ${{ secrets.M2_SETTINGS }}
+        run: printf "$M2_SETTINGS" > ~/.m2/settings.xml
+
 
       - name: Build and test
         run: mvn -B test --file pom.xml
