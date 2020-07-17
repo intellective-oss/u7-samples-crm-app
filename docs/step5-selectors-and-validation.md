@@ -315,6 +315,7 @@ public class UsCitySelectorTest extends BaseSelectorTest {
     }
 }
 ``` 
+
 And the corresponding piece of configuration (`custom-services/src/test/resources/unity_config.xml`) for testing:
 ```xml
     <Selector ID="UsCitySelector">
@@ -323,10 +324,12 @@ And the corresponding piece of configuration (`custom-services/src/test/resource
       <Property ID="StateCodeProperty" value="StateCode"/>
     </Selector>
 ```
+
 Run the tests to ensure everything works fine. After that, move those pieces of configuration into the main configuartion
 [`custom-config/src/main/resources/unity/unity_config.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config.xml).
 
 Here we are ready to apply selectors to fields:
+
 ```xml
     <Criterion>
         <FieldName>State</FieldName>
@@ -352,7 +355,7 @@ Here we are ready to apply selectors to fields:
         <MultiValue>false</MultiValue>
         <MinLength>2</MinLength>
         <MaxLength>64</MaxLength>
-        <Linked>State</Linked>                  <!-- AND THIS -->
+        <Linked>State</Linked>                   <!-- AND THIS -->
         <SelectorId>UsCitySelector</SelectorId>  <!-- AND THIS -->
     </Criterion>
 ```
@@ -431,12 +434,14 @@ Ext.define('Override.form.field.VTypes', {
     UsPhoneMask: /[0-9\+\-\s]/i
 });
 ``` 
+
 Here we combine a client-side validation (regexp) with server-side call. 
 When the entered value satisfies the regexp, we extract the area code from the string, also get selected `State` and `City`, and
 call the API (do POST at `/custom-api/1.0/states/{stateCode}/{cityName}/validate`). Marking the field validation
 in order what's the result.
 
 We shouldn't forget to add a new source into `wro-custom.xml`:
+
 ```xml
 <groups xmlns="http://www.isdc.ro/wro"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -455,6 +460,7 @@ We shouldn't forget to add a new source into `wro-custom.xml`:
 ```
 
 Edit the configuration to enable validation for the criteria:
+
 ```xml
     <Criterion>
         <FieldName>PhoneNumber</FieldName>
@@ -468,6 +474,7 @@ Edit the configuration to enable validation for the criteria:
         <VType>UsPhone</VType> <!-- ADD THIS ONE -->
     </Criterion>
 ```
+
 Test and see how it works. Use browser developer tool to see the network interaction (calling for the validation API).
 
 Application is getting more and more convenient for users. However, we are still getting the state codes in the

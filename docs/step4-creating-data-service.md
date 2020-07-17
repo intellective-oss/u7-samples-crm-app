@@ -522,7 +522,7 @@ put the file called [`custom-webapp\src\main\webapp\WEB-INF\configuration\unityA
 	<import resource="classpath:configuration/vu-core.xml"/>
 
     <!-- add custom services to the top spring context -->
-	<import resource="classpath:configuration/custom-services.xml"/>
+    <import resource="classpath:configuration/custom-services.xml"/>
 
 </beans>
 ```
