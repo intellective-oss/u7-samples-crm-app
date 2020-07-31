@@ -21,7 +21,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <unity.version>7.7.0-RC6</unity.version>
+        <unity.version>7.7.0-RC11</unity.version>
         <wro4j.version>1.8.0</wro4j.version>
         <spring.version>4.3.23.RELEASE</spring.version>
         <slf4j.version>1.7.25</slf4j.version>

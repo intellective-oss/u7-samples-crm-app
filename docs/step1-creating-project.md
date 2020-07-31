@@ -9,7 +9,7 @@ mvn archetype:generate "-DarchetypeGroupId=com.intellective.archetypes" ^
                        "-DgroupId=com.intellective.sample" ^
                        "-DartifactId=u7-crm-app" ^
                        "-Dversion=1.0.0-SNAPSHOT" ^
-                       "-DunityVersion=7.7.0-RC6"
+                       "-DunityVersion=7.7.0-RC11"
 ```
 Feel free to change versions of Unity or Unity archetype if necessary. 
 It will start the project creation procedure. Confirm project creation by entering `Y` when asked.
