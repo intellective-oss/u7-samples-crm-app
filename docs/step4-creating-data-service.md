@@ -502,36 +502,6 @@ public class StatesControllerTest {
 }
 ```
 
-To let Spring manage beans defined in the `custom-services` module in the context of the web application, 
-put the file called [`custom-webapp\src\main\webapp\WEB-INF\configuration\unityApplicationContext.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/WEB-INF/configuration/unityApplicationContext.xml)
- with the following content:
-
-```xml
-<beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-
-	<import resource="classpath:configuration/ucm-core.xml"/>
-	<import resource="classpath:configuration/ucm-configuration.xml"/>
-	<import resource="classpath:configuration/ucm-security.xml"/>
-	<import resource="classpath:configuration/ucm-remote-jbpm.xml"/>
-	<import resource="classpath:configuration/ucm-case-management-jbpm.xml"/>
-	<import resource="classpath:configuration/ucm-process-management-jbpm.xml"/>
-	<import resource="classpath:configuration/ucm-remote-client-icm.xml"/>
-	<import resource="classpath:configuration/ucm-case-management-icm.xml"/>
-	<import resource="classpath:configuration/ucm-process-management-icm.xml"/>
-	<import resource="classpath:configuration/ucm-document-management.xml"/>
-	<import resource="classpath:configuration/ucm-application.xml"/>
-	<import resource="classpath:configuration/unity-public-api.xml"/>
-	<import resource="classpath:configuration/auth-cfg.xml"/>
-	<import resource="classpath:configuration/vu-core.xml"/>
-
-    <!-- add custom services to the top spring context -->
-    <import resource="classpath:configuration/custom-services.xml"/>
-
-</beans>
-```
-
 Rebuild the application and ensure everything's working fine. You can call for the custom API using browser,
 curl, Postman, or SoapUI:
 * GET `http://localhost:9080/custom-webapp/custom-api/1.0/states`
