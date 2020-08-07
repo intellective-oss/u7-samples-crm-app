@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.Collections;
 
 @RestController
@@ -16,6 +17,11 @@ public class StatesController {
 
     @Autowired
     private StatesCitiesDictionaryService statesCitiesDictionaryService;
+
+    @GetMapping
+    public Collection<State> listStates() {
+        return statesCitiesDictionaryService.listStates();
+    }
 
     @GetMapping("/{stateCode}")
     public State getState(@PathVariable String stateCode) {

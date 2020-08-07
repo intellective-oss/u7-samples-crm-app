@@ -330,6 +330,11 @@ public class StatesController {
     @Autowired
     private StatesCitiesDictionaryService statesCitiesDictionaryService;
 
+    @GetMapping
+    public Collection<State> listStates() {
+        return statesCitiesDictionaryService.listStates();
+    }
+
     @GetMapping("/{stateCode}")
     public State getState(@PathVariable String stateCode) {
         State state = statesCitiesDictionaryService.getStateByCode(stateCode);
@@ -529,10 +534,14 @@ put the file called [`custom-webapp\src\main\webapp\WEB-INF\configuration\unityA
 
 Rebuild the application and ensure everything's working fine. You can call for the custom API using browser,
 curl, Postman, or SoapUI:
-* GET `http://localhost:9080/vu/custom-api/1.0/states`
-* GET `http://localhost:9080/vu/custom-api/1.0/states/CA`
-* GET `http://localhost:9080/vu/custom-api/1.0/states/CA/Irvine`
-* POST `http://localhost:9080/vu/custom-api/1.0/states/CA/Irvine` with a body of `{ 'areaCode' : '949' }`
+* GET `http://localhost:9080/custom-webapp/custom-api/1.0/states`
+* GET `http://localhost:9080/custom-webapp/custom-api/1.0/states/CA`
+* GET `http://localhost:9080/custom-webapp/custom-api/1.0/states/CA/Irvine`
+* POST `http://localhost:9080/custom-webapp/custom-api/1.0/states/CA/Irvine` with a body of `{ 'areaCode' : '949' }`
+
+Note that you'll have to add at least 2 HTTP headers to your request:
+ - `Authorization: Basic <BASIC_AUTH_TOKEN>` (see https://en.wikipedia.org/wiki/Basic_access_authentication).
+ - `Referer: http://localhost:9080` (to pass-through XSS attack filtering).
 
 We have a running Spring data service, and the REST API we may call from the client side.
 On the next step we are going to use it implementing selectors for `State` and `City` fields, as well as

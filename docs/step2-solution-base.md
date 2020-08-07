@@ -328,7 +328,7 @@ the same fashion as we did above (at `/Configuration/SearchTemplates`):
                 <Type>string</Type>
                 <Operator>eq</Operator>
                 <Required>false</Required>
-                <Hidden>true</Hidden> <!-- hidden -->
+                <Hidden>false</Hidden> <!-- hidden -->
                 <Readonly>false</Readonly>
                 <MultiValue>false</MultiValue>
             </Criterion>

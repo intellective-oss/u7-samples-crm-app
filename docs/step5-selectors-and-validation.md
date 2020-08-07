@@ -316,12 +316,13 @@ public class UsCitySelectorTest extends BaseSelectorTest {
 }
 ``` 
 
-And the corresponding piece of configuration (`custom-services/src/test/resources/unity_config.xml`) for testing:
+And the corresponding piece of configuration for testing. 
+Copy your configuration to `custom-services/src/test/resources/unity_config.xml` and then add the following:
 ```xml
     <Selector ID="UsCitySelector">
       <ClassName>com.intellective.sample.selector.UsCitySelector</ClassName>
       <Description/>
-      <Property ID="StateCodeProperty" value="StateCode"/>
+      <Property ID="StateCodeProperty" value="State"/>
     </Selector>
 ```
 
