@@ -1,4 +1,4 @@
-# [Unity 7 Customization Tutorial](https://intellective-oss.github.io/u7-samples-crm-app/)
+# [Unity 7 Customization Tutorial](https://intellectivelab.github.io/u7-samples-crm-app/)
 
 This tutorial implements a very basic application that uses only simple document management capabilities of 
 [Unity 7](https://www.intellective.com/unity) and

@@ -11,7 +11,7 @@ general beans and MVC capabilities.
 # Implementing data service
 At first, we should introduce model objects and appropriate interface declaring all the operations we need.
 
-[`com.intelective.sample.model.State`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/State.java)
+[`com.intelective.sample.model.State`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/State.java)
 
 ```java
 package com.intellective.sample.model;
@@ -56,7 +56,7 @@ public class State {
 }
 ```
 
-[`com.intelective.sample.model.City`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/City.java)
+[`com.intelective.sample.model.City`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/model/City.java)
 
 ```java
 package com.intellective.sample.model;
@@ -92,7 +92,7 @@ public class City {
 }
 ```
 
-[`com.intelective.sample.service.StatesCitiesDictionaryService`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/StatesCitiesDictionaryService.java)
+[`com.intelective.sample.service.StatesCitiesDictionaryService`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/StatesCitiesDictionaryService.java)
 
 ```java
 package com.intellective.sample.service;
@@ -122,7 +122,7 @@ During the further development you will see that we need only these 2 operations
 
 The next possible step, before service implementation, is creating tests:
 
-[`com.intellective.sample.service.StatesCitiesDictionaryServiceTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/service/StatesCitiesDictionaryServiceTest.java)
+[`com.intellective.sample.service.StatesCitiesDictionaryServiceTest`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/service/StatesCitiesDictionaryServiceTest.java)
 
 ```java
 package com.intellective.sample.service;
@@ -183,7 +183,7 @@ These tests assert the core behaviour of the service implementation. Now we will
 test.
 
 At first, download the data sets ant put them in the resource directory of the `custom-services` module:
-[`custom-services/src/main/resources/states.csv`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/resources/states.csv)
+[`custom-services/src/main/resources/states.csv`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/resources/states.csv)
 
 ```
 "State","Abbreviation"
@@ -195,7 +195,7 @@ At first, download the data sets ant put them in the resource directory of the `
 ...
 ```
 
-[`custom-services/src/main/resources/us-area-code-cities.csv`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/resources/us-area-code-cities.csv)
+[`custom-services/src/main/resources/us-area-code-cities.csv`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/resources/us-area-code-cities.csv)
 
  ```
 201,Bayonne,"New Jersey",US,40.66871,-74.11431
@@ -219,7 +219,7 @@ Add it in the parent `pom.xml` (into `<dependencyManagement>`) and in the `custo
 
 Everything is ready to implement a service.
 
-[`com.intellective.sample.service.DefaultStatesCitiesDictionaryServiceImpl`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/DefaultStatesCitiesDictionaryServiceImpl.java):
+[`com.intellective.sample.service.DefaultStatesCitiesDictionaryServiceImpl`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/service/DefaultStatesCitiesDictionaryServiceImpl.java):
 
 ```java
 package com.intellective.sample.service;
@@ -300,7 +300,7 @@ public class DefaultStatesCitiesDictionaryServiceImpl implements StatesCitiesDic
 
 Here we read states at first, putting them in two maps. After that, we read cities and put them in appropriate states. Run test to ensure the implementation we made works as expected.
 
-To enable Spring managing new beans make sure you have correct package name in the [`configuration\custom-services.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/resources/configuration/custom-services.xml) file.
+To enable Spring managing new beans make sure you have correct package name in the [`configuration\custom-services.xml`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/resources/configuration/custom-services.xml) file.
 
 # REST Endpoint
 We are going to publish our data as REST-like service. However, it will only read data, not change it. 
@@ -308,7 +308,7 @@ We are going to publish our data as REST-like service. However, it will only rea
 * `GET /1.0/states/{stateCode}/{cityName}` – return `City` object state with information about the city;
 * `POST /1.0/states/{stateCode}/{cityName}/validate` – validates the code posted in the request body against the `State` and the `City` provided.
 
-[`com.intellective.sample.controller.StatesController`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/controller/StatesController.java)
+[`com.intellective.sample.controller.StatesController`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/controller/StatesController.java)
 
 ```java
 package com.intellective.sample.controller;
@@ -426,7 +426,7 @@ public class OperationResult {
 
 Don't forget about a test.
 
-[`com.intellective.sample.controller.StatesControllerTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/controller/StatesControllerTest.java)
+[`com.intellective.sample.controller.StatesControllerTest`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/controller/StatesControllerTest.java)
 
 ```java
 package com.intellective.sample.controller;

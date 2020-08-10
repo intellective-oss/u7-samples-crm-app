@@ -8,7 +8,7 @@ We are going to integrate our data service as Unity selectors and apply them for
 
 Implementing state selector:
 
-[`com.intellective.sample.selector.UsStateSelector`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/selector/UsStateSelector.java)
+[`com.intellective.sample.selector.UsStateSelector`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/selector/UsStateSelector.java)
 
 ```java
 package com.intellective.sample.selector;
@@ -64,7 +64,7 @@ absolutely appropriate (changing the number of states deserves server restart).
 
 A simple test for this selector:
 
-[`com.intellective.sample.selector.UsStateSelectorTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/UsStateSelectorTest.java)
+[`com.intellective.sample.selector.UsStateSelectorTest`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/UsStateSelectorTest.java)
 
 ```java
 package com.intellective.sample.selector;
@@ -107,7 +107,7 @@ public class UsStateSelectorTest extends BaseSelectorTest {
 
 It uses the following base unit test (we are going to use it for city selector test as well):
 
-[`com.intellective.sample.selector.BaseSelectorTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/BaseSelectorTest.java)
+[`com.intellective.sample.selector.BaseSelectorTest`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/BaseSelectorTest.java)
 
 ```java
 package com.intellective.sample.selector;
@@ -177,7 +177,7 @@ and declare the selector at `/Configuration/Selectors`:
 
 Now, we are going to implement selector for the `City` field. It should support filtering by the selected `State`. 
 
-[`com.intellective.sample.selector.UsCitySelector`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/selector/UsCitySelector.java)
+[`com.intellective.sample.selector.UsCitySelector`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/selector/UsCitySelector.java)
 
 ```java
 package com.intellective.sample.selector;
@@ -256,7 +256,7 @@ respect the input parameter (state code). That's why `timeoutExpire()` returns `
 
 We have to create a test for this selector as well:
 
-[`com.intellective.sample.selector.UsCitySelectorTest`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/UsCitySelectorTest.java)
+[`com.intellective.sample.selector.UsCitySelectorTest`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/test/java/com/intellective/sample/selector/UsCitySelectorTest.java)
 
 ```java
 package com.intellective.sample.selector;
@@ -327,7 +327,7 @@ Copy your configuration to `custom-services/src/test/resources/unity_config.xml`
 ```
 
 Run the tests to ensure everything works fine. After that, move those pieces of configuration into the main configuartion
-[`custom-config/src/main/resources/unity/unity_config.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config.xml).
+[`custom-config/src/main/resources/unity/unity_config.xml`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config.xml).
 
 Here we are ready to apply selectors to fields:
 

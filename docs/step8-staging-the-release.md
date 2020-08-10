@@ -2,7 +2,7 @@
 
 # Staging the release using Docker image
 
-Customize the image name and tags (if necessary) at [`custom-docker/pom.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-docker/pom.xml):
+Customize the image name and tags (if necessary) at [`custom-docker/pom.xml`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-docker/pom.xml):
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"

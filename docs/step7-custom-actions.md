@@ -127,7 +127,7 @@ Next, we are going to extend the dialog component used for adding documents to m
 `Correspondence` documents much easier for users. It catches the selected record, get the `CustomerName` field value
 and pull it on the form. 
 
-[`custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondenceDialog.js`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondenceDialog.js)
+[`custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondenceDialog.js`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondenceDialog.js)
 
 ```javascript
 Ext.define('custom.action.AddCustomerCorrespondenceDialog', {
@@ -153,7 +153,7 @@ Ext.define('custom.action.AddCustomerCorrespondenceDialog', {
 
 The action handler itself:
 
-[`custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondence.js`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondence.js)
+[`custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondence.js`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-webapp/src/main/webapp/js/custom/actions/AddCustomerCorrespondence.js)
 
 ```javascript
 VSpace.action.ActionHandler['add_CustomerCorrespondence'] = function(evt) {

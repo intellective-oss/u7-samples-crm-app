@@ -8,7 +8,7 @@ should always consider a performance rate of this procedure.
 At first, we should create a wrapper that accumulates server response body and allows to return it as a String. 
 It is necessary to parse JSON response.
 
-[`com.intellective.sample.web.ByteResponseWrapper`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/web/ByteResponseWrapper.java)
+[`com.intellective.sample.web.ByteResponseWrapper`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/web/ByteResponseWrapper.java)
 
 ```java
 package com.intellective.sample.web;
@@ -165,7 +165,7 @@ public class ByteResponseWrapper extends HttpServletResponseWrapper {
 
 Now, we can create a filter:
 
-[`com.intellective.sample.web.StateCodeResolverFilter`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/web/StateCodeResolverFilter.java)
+[`com.intellective.sample.web.StateCodeResolverFilter`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-services/src/main/java/com/intellective/sample/web/StateCodeResolverFilter.java)
 
 ```java
 package com.intellective.sample.web;
@@ -264,7 +264,7 @@ Note that we are making this code safe. If it did not find a State by its code i
 
 Now, we should add it into `web.xml` of the resulting app. For that, we have the `custom_addon_web.xml` file:
 
-[`custom-webapp/src/main/custom_addon_web.xml`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-webapp/src/main/custom_addon_web.xml)
+[`custom-webapp/src/main/custom_addon_web.xml`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-webapp/src/main/custom_addon_web.xml)
 
 ```xml
 <web-app>

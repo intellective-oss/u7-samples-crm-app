@@ -44,7 +44,7 @@ At first, add data source and data provider in the appropriate sections
     </Datasource>
 ```
 Note, that it relies on the environment variables externalized into the separate file
-[`custom-config/src/main/resources/unity/unity_config-environment.ini`](https://github.com/intellective-oss/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config-environment.ini).
+[`custom-config/src/main/resources/unity/unity_config-environment.ini`](https://github.com/intellectivelab/u7-samples-crm-app/blob/master/custom-config/src/main/resources/unity/unity_config-environment.ini).
 
 ```xml
     <RepositoryDataProvider ID="Customer_repository"

@@ -1,5 +1,5 @@
 # Creating a project
-Follow the guide of the archetype: https://github.com/intellective-oss/unity7-maven-archetype
+Follow the guide of the archetype: https://github.com/intellectivelab/unity7-maven-archetype
 
 Basically, you have to set up Maven access token and then run the following command (for Windows):
 ```
@@ -72,7 +72,7 @@ To debug the server-side, we should run OpenLiberty server in debug mode. Create
 ```
 @echo off
 set JAVA_HOME=C:\Dev\Java\zulu-8
-set JVM_ARGS=-Xmx1g -DunityConfigUrl_custom_webapp="file:///C:\Users\ozimakov\IdeaProjects\intellective-oss\samples\u7-crm-app\custom-config\src\main\resources\unity\unity_config.xml"
+set JVM_ARGS=-Xmx1g -DunityConfigUrl_custom_webapp="file:///C:\Users\ozimakov\IdeaProjects\intellectivelab\samples\u7-crm-app\custom-config\src\main\resources\unity\unity_config.xml"
 <WLP_HOME>\wlp\bin\server.bat debug
 ```
 (basically, it calls for `server.bat debug` instead of `server.bat run`)
