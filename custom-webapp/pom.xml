@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.intellective.unity</groupId>
         <artifactId>unity-customization-parent</artifactId>
-        <version>7.7.0-RC11</version>
+        <version>7.7.0.1</version>
         <relativePath>../..</relativePath>
     </parent>
 
@@ -29,10 +29,10 @@
     </dependencies>
 
     <repositories>
-        <!-- Intellective's private Maven repository. You should have an access token to access it.  -->
+        <!-- Private Maven repository. Make sure you have access. -->
         <repository>
-            <id>intellective-maven</id>
-            <url>https://gitlab.devops.intellectivelab.com/api/v4/groups/39/-/packages/maven</url>
+            <id>maven.intellective.com</id>
+            <url>https://maven.intellective.com/repository/maven-public/</url>
         </repository>
     </repositories>
 

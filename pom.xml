@@ -21,7 +21,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <unity.version>7.7.0-RC11</unity.version>
+        <unity.version>7.7.0.1</unity.version>
         <wro4j.version>1.8.0</wro4j.version>
         <spring.version>4.3.23.RELEASE</spring.version>
         <slf4j.version>1.7.25</slf4j.version>
@@ -29,10 +29,10 @@
     </properties>
 
     <repositories>
-        <!-- Intellective's private Maven repository. You should have an access token to access it.  -->
+        <!-- Private Maven repository. Make sure you have access. -->
         <repository>
-            <id>intellective-maven</id>
-            <url>https://gitlab.devops.intellectivelab.com/api/v4/groups/39/-/packages/maven</url>
+            <id>maven.intellective.com</id>
+            <url>https://maven.intellective.com/repository/maven-public/</url>
         </repository>
     </repositories>
 
