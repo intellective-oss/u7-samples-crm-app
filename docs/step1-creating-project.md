@@ -1,15 +1,16 @@
 # Creating a project
 Follow the guide of the archetype: https://github.com/intellectivelab/unity7-maven-archetype
 
-Basically, you have to set up Maven access token and then run the following command (for Windows):
+Basically, you have to set up credentials for the private Maven repository (maven.intellective.com) 
+and then run the following command (for Windows):
 ```
 mvn archetype:generate "-DarchetypeGroupId=com.intellective.archetypes" ^
                        "-DarchetypeArtifactId=unity7-maven-archetype" ^
-                       "-DarchetypeVersion=1.0.3" ^
+                       "-DarchetypeVersion=1.0.5" ^
                        "-DgroupId=com.intellective.sample" ^
                        "-DartifactId=u7-crm-app" ^
                        "-Dversion=1.0.0-SNAPSHOT" ^
-                       "-DunityVersion=7.7.0-RC11"
+                       "-DunityVersion=7.7.0.1"
 ```
 Feel free to change versions of Unity or Unity archetype if necessary. 
 It will start the project creation procedure. Confirm project creation by entering `Y` when asked.
@@ -72,7 +73,7 @@ To debug the server-side, we should run OpenLiberty server in debug mode. Create
 ```
 @echo off
 set JAVA_HOME=C:\Dev\Java\zulu-8
-set JVM_ARGS=-Xmx1g -DunityConfigUrl_custom_webapp="file:///C:\Users\ozimakov\IdeaProjects\intellectivelab\samples\u7-crm-app\custom-config\src\main\resources\unity\unity_config.xml"
+set JVM_ARGS=-Xmx1g -DunityConfigUrl_custom_webapp="file:///<PROJECT_DIR>\custom-config\src\main\resources\unity\unity_config.xml"
 <WLP_HOME>\wlp\bin\server.bat debug
 ```
 (basically, it calls for `server.bat debug` instead of `server.bat run`)
